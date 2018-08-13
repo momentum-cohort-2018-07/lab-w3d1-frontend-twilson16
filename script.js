@@ -18,16 +18,24 @@
 // a student name, and an assignment number, and returns the score for that
 // student and assignment.
 
-function assignmentScore (grades, studentName, assignmentNum) {
 
+function assignmentScore (grades, studentName, assignmentNum) {
+   return grades[studentName][assignmentNum]
 }
+
 
 // 2. Create a function called assignmentScores that takes a grades object
 // and an assignment number and returns all scores for that assignment.
 
-function assignmentScores (grades, assignmentNum) {
 
+function assignmentScores (grades, assignmentNum) {
+   let allGrades = Object.values(grades)
+   let assignmentGrades = allGrades.map(function (grade) {
+   return grade[assignmentNum]
+     })
+     return assignmentGrades
 }
+
 
 // 3. Create a function called assignmentAverageScore that takes a grades
 // object and an assignment number and returns the average score for that assignment.
